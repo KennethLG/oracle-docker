@@ -13,6 +13,6 @@ export default class Routes {
   private routes() {
     const usersRepository = new UsersRepository();
     const usersController = new UsersController(usersRepository);
-    this.router.use(usersController.router);
+    this.router.use("/users", usersController.router);
   }
 }

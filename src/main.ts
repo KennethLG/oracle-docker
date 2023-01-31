@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import Routes from "./routes";
 
+
 export default class App {
   private readonly app: Application;
 
