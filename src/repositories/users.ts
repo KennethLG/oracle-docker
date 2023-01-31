@@ -19,8 +19,10 @@ export default class UsersRepository implements IUsersRepository {
     try {
       await this.dbClient.authenticate();
       console.log("Connection has been established successfully.");
+      return "Connection has been established successfully.";
     } catch (error) {
       console.error("Unable to connect to the database:", error);
+      return "Unable to connect to the database:";
     }
   }
 }

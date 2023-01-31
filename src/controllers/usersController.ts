@@ -13,8 +13,11 @@ export default class UsersController implements IUsersController {
   }
 
   routes() {
-    this.router.get("/", (req, res) => {
-      this.usersRepository.init();
+    this.router.get("/", async (req, res) => {
+      const response = await this.usersRepository.init();
+      res.json({
+        message: response,
+      });
     });
   }
 }
