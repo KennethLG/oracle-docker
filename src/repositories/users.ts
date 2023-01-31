@@ -10,19 +10,19 @@ export default class UsersRepository implements IUsersRepository {
       host: "oracle",
       port: 1521,
       dialectOptions: {
-        connectString: "XE",
+        connectString: "oracle:1521/XE",
       },
     });
   }
 
   async init() {
     try {
-      await this.dbClient.authenticate();
-      console.log("Connection has been established successfully.");
-      return "Connection has been established successfully.";
+      const response = await this.dbClient.query(
+        "SELECT CURRENT_DATE FROM DUAL"
+      );
+      return response;
     } catch (error) {
       console.error("Unable to connect to the database:", error);
-      return "Unable to connect to the database:";
     }
   }
 }

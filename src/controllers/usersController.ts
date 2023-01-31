@@ -19,5 +19,11 @@ export default class UsersController implements IUsersController {
         message: response,
       });
     });
+
+    this.router.get("/hello", async (req, res) => {
+      res.json({
+        message: "Hello World!",
+      });
+    });
   }
 }

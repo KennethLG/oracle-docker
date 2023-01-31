@@ -18,7 +18,7 @@ services:
     environment:
       - ORACLE_ALLOW_REMOTE=true
       - ORACLE_PWD=oracle
-#     volumes:
-#       - oracle:/opt/oracle/oradata
-# volumes:
-#   mydb:
+    volumes:
+      - oracle:/opt/oracle/oradata
+volumes:
+  oracle:
