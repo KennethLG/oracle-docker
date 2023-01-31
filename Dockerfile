@@ -11,5 +11,6 @@ RUN wget https://download.oracle.com/otn_software/linux/instantclient/instantcli
 COPY package*.json ./
 RUN npm install
 COPY . .
+RUN npm run build
 EXPOSE 3000
 CMD [ "npm", "start" ]
